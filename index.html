@@ -3,11 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light only">
 <title>Hotelworks — ホテル業界専門求人</title>
 <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@600;700&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;500;600&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
 <style>
 :root{
+  color-scheme:light only;
   --navy:#0d1f5c;--navy-mid:#162476;--navy-lt:#1e3494;--navy-dk:#08143c;
   --gold:#c9a43e;--gold-lt:#e2bc5a;--gold-pale:#f7edd0;
   --cream:#faf8f2;--white:#fff;
@@ -26,7 +28,7 @@
   --muted:#8896b0;
 }
 *{box-sizing:border-box;margin:0;padding:0}
-body{font-family:"Noto Sans JP",sans-serif;font-weight:300;background:var(--cream);color:var(--t1);min-height:100vh}
+body{font-family:"Noto Sans JP",sans-serif;font-weight:300;background:#faf8f2!important;color:#1a1a2e!important;min-height:100vh;-webkit-text-size-adjust:100%}
 
 /* HEADER */
 header{background:#041a54;position:sticky;top:0;z-index:100;border-bottom:1px solid rgba(201,164,62,.25)}
@@ -871,6 +873,7 @@ nav button.on{color:var(--gold);border-bottom:2px solid var(--gold);border-radiu
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;500;600&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
 <style>
 :root{
+  color-scheme:light only;
   --navy:#0d1f5c;--navy-mid:#162476;--navy-lt:#1e3494;--navy-dk:#08143c;
   --gold:#c9a43e;--gold-lt:#e2bc5a;--gold-pale:#f7edd0;
   --cream:#faf8f2;--white:#fff;
@@ -889,7 +892,7 @@ nav button.on{color:var(--gold);border-bottom:2px solid var(--gold);border-radiu
   --muted:#8896b0;
 }
 *{box-sizing:border-box;margin:0;padding:0}
-body{font-family:"Noto Sans JP",sans-serif;font-weight:300;background:var(--cream);color:var(--t1);min-height:100vh}
+body{font-family:"Noto Sans JP",sans-serif;font-weight:300;background:#faf8f2!important;color:#1a1a2e!important;min-height:100vh;-webkit-text-size-adjust:100%}
 
 /* HEADER */
 header{background:#041a54;position:sticky;top:0;z-index:100;border-bottom:1px solid rgba(201,164,62,.25)}
@@ -1653,7 +1656,7 @@ nav button.on{color:var(--gold);border-bottom:2px solid var(--gold);border-radiu
 }
 @media (max-width: 560px) {
   .news-card { grid-template-columns: 1fr; }
-  .news-thumb { display: none; }
+  .news-thumb { display: block; }
   .g-nav-inner { gap: 0; }
   .tab-nav-btn { padding: 0 12px; font-size: 12px; }
 }
@@ -2713,6 +2716,181 @@ nav button.on{color:var(--gold);border-bottom:2px solid var(--gold);border-radiu
 .btn-apply-submit:hover{background:var(--gold-lt)}
 .btn-apply-cancel{background:none;border:1px solid var(--border);color:var(--muted);padding:13px 20px;border-radius:6px;font-size:13px;cursor:pointer;font-family:inherit;transition:all .18s}
 .btn-apply-cancel:hover{border-color:var(--navy);color:var(--navy)}
+
+/* ══════════════════════════════════════
+   MOBILE & TABLET RESPONSIVE
+══════════════════════════════════════ */
+
+/* ── タブレット (max-width:1024px) ── */
+@media(max-width:1024px){
+  nav button{padding:7px 10px;font-size:12px}
+  .hd{gap:14px}
+  .hdetail-layout{grid-template-columns:1fr}
+  .hdetail-side{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .news-layout{grid-template-columns:1fr 220px}
+  .comm-layout{grid-template-columns:160px 1fr}
+}
+
+/* ── スマホ・小型タブレット (max-width:768px) ── */
+@media(max-width:768px){
+
+  /* 全体の背景・テキスト色を明示固定（ダークモード対策） */
+  html,body{background:#faf8f2!important;color:#1a1a2e!important}
+
+  /* ── ヘッダー ── */
+  .hd{
+    height:auto;
+    display:flex;
+    flex-wrap:wrap;
+    align-items:center;
+    padding:0 12px;
+    gap:0;
+  }
+  /* 1行目：ロゴ全体（左）＋ ログイン/登録ボタン（右）・一直線 */
+  .logo{
+    flex-shrink:1;
+    order:1;
+    gap:8px!important;
+    padding:8px 0;
+    min-width:0;
+  }
+  .logo img{height:26px!important}
+  .logo-text{font-size:13px!important;letter-spacing:.04em!important}
+  .logo-sub{font-size:8px!important;letter-spacing:.06em!important}
+  .hd-r{
+    order:2;
+    margin-left:auto;
+    display:flex;
+    gap:5px;
+    align-items:center;
+    flex-shrink:0;
+    padding:8px 0 8px 8px;
+  }
+  .btn-ln{padding:5px 10px;font-size:11px}
+  .btn-rg{padding:5px 10px;font-size:11px}
+  /* 2行目：ナビ・フル幅・横スクロール */
+  nav{
+    order:3;
+    width:100%;
+    flex:none;
+    flex-wrap:nowrap;
+    overflow-x:auto;
+    scrollbar-width:none;
+    gap:0;
+    padding:4px 0 2px;
+    border-top:1px solid rgba(201,164,62,.18);
+    margin-top:0;
+  }
+  nav::-webkit-scrollbar{display:none}
+  nav button{padding:7px 13px;font-size:12px;white-space:nowrap}
+
+  /* ── ヒーロー検索 ── */
+  .sbox{flex-direction:column;padding:14px}
+  .sf{min-width:100%}
+  .btn-s{width:100%;padding:11px}
+  .hstats{gap:18px}
+  .hs .n{font-size:18px}
+
+  /* ── ホテルカード ── */
+  .hcard-top{flex-wrap:wrap}
+  .hsal-range{text-align:left;margin-top:4px}
+
+  /* ── ホテル詳細 ── */
+  .hdetail-hero{height:200px}
+  .hdetail-hero-info{padding:16px 18px}
+  .hdetail-hero-info h1{font-size:20px}
+  .hdetail-layout{grid-template-columns:1fr}
+  .hdetail-side{display:grid;grid-template-columns:1fr;gap:14px}
+  .hd-info-grid{grid-template-columns:1fr}
+
+  /* ── 単発求人（旧） ── */
+  .sfrow{grid-template-columns:1fr}
+  .spot-grid{grid-template-columns:repeat(2,1fr)!important}
+
+  /* ── ニュース ── */
+  .news-layout{grid-template-columns:1fr}
+  .news-sidebar{display:none}
+  .news-featured{grid-template-columns:1fr}
+  .news-featured-img{height:140px}
+
+  /* ── コミュニティ ── */
+  .comm-layout{grid-template-columns:1fr}
+  .comm-sidebar{display:none}
+  .comm-section-cards{grid-template-columns:1fr}
+
+  /* ── マイページ ── */
+  .mp-subnav-inner{flex-wrap:wrap}
+  .mp-subnav-user{border-right:none;padding-right:0;margin-right:0;width:100%;border-bottom:1px solid rgba(255,255,255,.12);padding-bottom:8px}
+  .mp-subnav-tabs{overflow-x:auto;scrollbar-width:none}
+  .mp-subnav-tabs::-webkit-scrollbar{display:none}
+  .mp-nav-item{padding:10px 14px;font-size:12px}
+  .mp-row{grid-template-columns:1fr}
+  .act-nav-cards{grid-template-columns:1fr 1fr}
+  .act-jobs-grid,.act-follow-grid{grid-template-columns:1fr}
+
+  /* ── 応募フォーム ── */
+  .apply-modal{margin:10px;border-radius:10px}
+  .apply-body{padding:16px 18px}
+  .apply-row{grid-template-columns:1fr}
+  .apply-submit-row{flex-direction:column}
+  .btn-apply-submit,.btn-apply-cancel{width:100%}
+
+  /* ── 求人詳細モーダル ── */
+  .moverlay{padding:10px}
+  .modal{max-height:95vh;border-radius:10px}
+  .mbody{padding:16px 18px}
+  .mgrid{grid-template-columns:1fr}
+  .job-info-grid{grid-template-columns:1fr}
+
+  /* ── その他 ── */
+  .clayout{grid-template-columns:1fr}
+  .nlayout{grid-template-columns:1fr}
+  .profile-field-row{grid-template-columns:1fr}
+
+  /* ── ホテル詳細ページ ── */
+  .hdetail-layout{padding:16px 14px}
+  .hd-section{padding:16px 16px}
+  .hdetail-hero{height:200px}
+  .hdetail-hero-info{padding:14px 16px}
+  .hdetail-hero-info h1{font-size:18px}
+  .hd-info-grid{grid-template-columns:1fr}
+  .hd-job-row-inner{padding:12px 14px;flex-wrap:wrap;gap:8px}
+  .hd-job-sal{font-size:13px;margin-left:0}
+
+  /* ── modal-bg 系（ニュース記事・コミュニティ投稿詳細） ── */
+  .modal-bg{padding:10px}
+  .modal-bg.scroll-top{padding-top:16px}
+  .modal-box{padding:18px;max-height:92vh}
+  .modal-box.wide{padding:0}
+
+  /* ── 現場の声・掲示板モーダル ── */
+  .voice-card{padding:16px 16px}
+  .voice-card-title{font-size:15px}
+  .post-modal-body{padding:16px 16px}
+  .post-modal-title{font-size:17px}
+}
+
+/* ── スマホ縦 (max-width:480px) ── */
+@media(max-width:480px){
+  .hero{padding:36px 14px 32px}
+  .hero h1{font-size:clamp(20px,6vw,28px)}
+  .hstats{gap:14px}
+  .hs .n{font-size:17px}
+  .hcard-body{padding:14px 14px 10px}
+  .hjob-pill{padding:8px 10px}
+  .hjob-title{font-size:12px}
+  .spot-grid{grid-template-columns:1fr!important}
+  .cal{justify-content:flex-start}
+  .news-card{grid-template-columns:1fr 80px}
+  .news-thumb{display:block;width:80px;height:60px}
+  .act-nav-cards{grid-template-columns:1fr}
+  .apply-overlay{padding:0;align-items:flex-end}
+  .apply-modal{margin:0;border-radius:14px 14px 0 0;max-height:92vh;overflow-y:auto}
+  .moverlay{padding:0;align-items:flex-end}
+  .modal{border-radius:10px 10px 0 0;max-height:94vh}
+  .post-prompt-dual{flex-wrap:wrap}
+  .btn-voice-post{width:100%;text-align:center}
+}
 </style>
 </head>
 <body>
@@ -3451,161 +3629,12 @@ const NEWS_PHOTOS=[
 ];
 
 // ホテル単位のデータ
-const HOTELS=[
-  {
-    id:1,
-    name:"ザ・ペニンシュラ東京",
-    logo:"Pe",
-    location:"東京・有楽町",
-    area:"関東",
-    category:"外資系",
-    photo:0,
-    gallery:[0,1,2],
-    tags:["外資系","ラグジュアリー"],
-    salRange:"22〜65万円",
-    about:"1866年の創業以来、世界最高峰のホスピタリティを提供し続けるペニンシュラホテルズ。東京店は2007年に開業し、皇居と東京の街並みを望む絶好のロケーションに位置します。全国際基準を凌駕するサービスと、スタッフの成長を支える充実した研修制度が自慢です。",
-    access:"JR有楽町駅 徒歩2分 / 東京メトロ日比谷駅 直結",
-    posts:[
-      {id:"p101",cat:"職場環境",date:"2025.04.20",title:"英語が苦手でも大丈夫？ペニンシュラの語学サポート制度",body:"「英語が話せないと外資系は難しいのでは…」とお思いの方へ。当ホテルでは入社後の語学研修プログラムを充実させています。週2回のグループレッスン、オンライン英会話の費用補助、そして英語圏のスタッフとのバディ制度など、実践的なサポートを用意しています。実際に入社時にほぼ英語ゼロだったスタッフが3年でVIP担当に昇格した例もあります。",comments:[{user:"転職希望Aさん",text:"英語の研修は業務時間内に受けられますか？",date:"4月21日"},{user:"在籍スタッフ",text:"はい、週1コマは業務時間内で受講できます！",date:"4月21日"}]},
-      {id:"p102",cat:"求人情報",date:"2025.04.01",title:"2025年5月 新フロア開業に伴う採用強化のお知らせ",body:"5月の新フロア開業に向け、フロント・レストラン・ハウスキーピングの各部門でスタッフを積極採用中です。未経験の方も歓迎しており、入社後は丁寧な研修をご用意しています。ホテル業界に興味はあるけれど一歩踏み出せていない方、ぜひこの機会をご活用ください。",comments:[]}
-    ],
-    jobs:[
-      {id:101,title:"フロントデスクスタッフ",dept:"フロント",type:"正社員",salary:"月給 25〜38万円",isNew:true,exp:"外資系歓迎",desc:"チェックイン・チェックアウト業務全般、コンシェルジュサポート、VIPゲスト対応などを担当。英語・日本語バイリンガル環境での就業。",benefits:"社員食堂完備、制服貸与、客室30%OFF、語学研修補助",person:"ホスピタリティ精神旺盛、英語日常会話以上、接客経験1年以上歓迎"},
-      {id:102,title:"コンシェルジュ",dept:"フロント",type:"正社員",salary:"月給 28〜42万円",isNew:false,exp:"経験者優遇",desc:"ゲストの多様なリクエストに応えるコンシェルジュ業務全般。レストラン予約、観光アドバイス、VIP対応。",benefits:"社員食堂完備、制服貸与、語学研修補助",person:"英語ビジネスレベル、接客経験3年以上"},
-      {id:103,title:"レストランサービス",dept:"料飲",type:"アルバイト",salary:"時給 1,400〜1,700円",isNew:true,exp:"未経験可",desc:"館内レストランでのフードサービス業務。ランチ・ディナータイムのシフト制。",benefits:"交通費全額支給、食事補助",person:"笑顔で接客できる方、週3日以上勤務可能な方"}
-    ]
-  },
-  {
-    id:2,
-    name:"星のや軽井沢",
-    logo:"Ho",
-    location:"長野・軽井沢",
-    area:"中部",
-    category:"リゾート",
-    photo:1,
-    gallery:[1,2,3],
-    tags:["リゾート","温泉旅館"],
-    salRange:"28〜65万円",
-    about:"星のや軽井沢は、谷に湧く温泉と豊かな自然に囲まれた滞在型リゾートです。「水波の部屋」「空中茶屋」など、ここにしかない体験を提供。料理は地元食材にこだわった創作料理で、調理スタッフのスキルアップ環境も充実しています。",
-    access:"JR軽井沢駅より送迎バスあり（約15分）",
-    posts:[
-      {id:"p201",cat:"スタッフ紹介",date:"2025.04.15",title:"料理長インタビュー：なぜ星のやを選んだか",body:"「東京の有名レストランから星のやへ転職」という経歴を持つ料理長・中村に話を聞きました。「都市のレストランは競争が激しく、食材の制限も多い。ここでは軽井沢の食材と直接対話しながら料理を作れる。それが一番の魅力です」と話します。自然と向き合いながら料理を追求したい方、ぜひご応募ください。",comments:[{user:"料理学校生",text:"料理学校を出てすぐでも応募できますか？",date:"4月16日"}]},
-      {id:"p202",cat:"求人情報",date:"2025.03.28",title:"夏シーズン大規模採用：寮完備で全国から応募歓迎",body:"7〜9月の繁忙シーズンに向け、調理・接客・ハウスキーピング各部門で採用を強化しています。軽井沢の自然の中で働いてみたい方、地方移住を検討中の方に最適な環境です。完全無料の社宅（1人部屋）、食事付き、引越し補助あり。まずは気軽にご相談ください。",comments:[]}
-    ],
-    jobs:[
-      {id:201,title:"料理長（日本料理）",dept:"料飲",type:"正社員",salary:"月給 45〜65万円",isNew:false,exp:"要経験",desc:"日本料理レストランの料理長として厨房を統括。メニュー開発から食材調達、スタッフマネジメントまで幅広く担当。",benefits:"住み込み可（社宅完備）、引越し補助、特別休暇制度、全施設利用割引",person:"調理師免許必須、日本料理店での料理長または副料理長経験5年以上"},
-      {id:202,title:"調理スタッフ",dept:"料飲",type:"正社員",salary:"月給 28〜38万円",isNew:true,exp:"経験者優遇",desc:"創作料理レストランの調理補助から担当料理まで幅広く担当。先輩シェフのもとでスキルを磨けます。",benefits:"社宅完備、食事補助、研修制度あり",person:"調理師免許保有者、3年以上の調理経験"}
-    ]
-  },
-  {
-    id:3,
-    name:"帝国ホテル 東京",
-    logo:"IH",
-    location:"東京・日比谷",
-    area:"関東",
-    category:"老舗",
-    photo:2,
-    gallery:[2,0,1],
-    tags:["老舗","ラグジュアリー"],
-    salRange:"1,350〜40万円",
-    about:"1890年開業の日本を代表するホテル。130年以上にわたり「ハイ・ホスピタリティ」を体現し続けています。正統派の接客教育と盤石な福利厚生で、多くのプロフェッショナルが長期キャリアを築いています。",
-    access:"JR有楽町駅 徒歩5分 / 東京メトロ日比谷駅 徒歩1分",
-    posts:[
-      {id:"p301",cat:"職場環境",date:"2025.04.10",title:"創業135年の帝国ホテルが求める「人材像」とは",body:"「礼節」「誠実」「チームワーク」——創業以来変わらないこの三つが、帝国ホテルが大切にする人材の軸です。学歴や資格よりも、この精神に共感できるかどうかを採用で重視しています。入社後は1年間の研修プログラムを経て各部門に配属。長く働ける環境を整えています。",comments:[{user:"就活中の学生",text:"文系の新卒でも応募可能でしょうか？",date:"4月11日"},{user:"採用担当",text:"もちろんです。文系・理系問わず歓迎しています！",date:"4月11日"}]}
-    ],
-    jobs:[
-      {id:301,title:"宴会・バンケットサービス",dept:"バンケット",type:"アルバイト",salary:"時給 1,350〜1,600円",isNew:true,exp:"未経験可",desc:"婚礼・宴会・企業イベントにおける料理・ドリンクのサービス業務。研修制度が充実しており未経験から活躍できます。",benefits:"交通費全額支給、食事補助、社員登用制度あり",person:"笑顔でテキパキ動ける方、週2日以上勤務可能な方"},
-      {id:302,title:"ブライダルコーディネーター",dept:"ブライダル",type:"正社員",salary:"月給 28〜40万円",isNew:false,exp:"経験者優遇",desc:"ウェディングプランナーとして婚礼の企画から当日運営まで一貫サポート。",benefits:"業績賞与年2回、育児休暇完備、国内外研修制度",person:"ブライダル経験2年以上"},
-      {id:303,title:"フロントスタッフ",dept:"フロント",type:"正社員",salary:"月給 24〜36万円",isNew:false,exp:"経験者優遇",desc:"チェックイン・アウト、電話対応、コンシェルジュ補助など。老舗ホテルの格式ある接客を学べます。",benefits:"社員食堂、制服貸与、慶弔見舞金制度",person:"接客経験1年以上、日本語ビジネスレベル"}
-    ]
-  },
-  {
-    id:4,
-    name:"ハイアット リージェンシー大阪",
-    logo:"HR",
-    location:"大阪・南港",
-    area:"関西",
-    category:"外資系",
-    photo:3,
-    gallery:[3,4,0],
-    tags:["外資系","シティホテル"],
-    salRange:"1,150〜36万円",
-    about:"大阪ベイエリアに位置する国際的なシティホテル。客室数561室を誇り、多国籍のゲストを迎えます。多様な職種での就業機会があり、グローバルなキャリアを築きたい方に最適な環境です。",
-    access:"大阪メトロ トレードセンター前駅 直結",
-    posts:[
-      {id:"p401",cat:"働き方",date:"2025.04.18",title:"ハウスキーピング部門の時短勤務制度について",body:"子育て中のスタッフや家庭の事情で長時間勤務が難しい方に向け、10時〜15時の5時間シフトを中心とした時短勤務制度を拡充しました。社会保険・交通費は全額支給、制服もご用意しています。「久しぶりに働きたいけど不安」という方もまずはお気軽にご相談ください。",comments:[]}
-    ],
-    jobs:[
-      {id:401,title:"客室清掃スタッフ（ハウスキーピング）",dept:"ハウスキーピング",type:"パート",salary:"時給 1,150〜1,300円",isNew:false,exp:"未経験可",desc:"客室の清掃・整備業務全般。10時〜15時のシフト中心。子育て中の方にも人気のお仕事です。",benefits:"交通費支給、制服貸与、時短勤務可",person:"几帳面で清潔感を大切にできる方"},
-      {id:402,title:"レストランスタッフ",dept:"料飲",type:"アルバイト",salary:"時給 1,250〜1,450円",isNew:true,exp:"未経験可",desc:"ホテル内レストランでのホール・フードサービス業務。英語を使う機会も豊富。",benefits:"交通費支給、食事補助、社員登用あり",person:"週3日以上勤務可能な方、英語に興味がある方歓迎"}
-    ]
-  },
-  {
-    id:5,
-    name:"アマン東京",
-    logo:"Am",
-    location:"東京・大手町",
-    area:"関東",
-    category:"外資系",
-    photo:4,
-    gallery:[4,5,0],
-    tags:["外資系","ウルトララグジュアリー"],
-    salRange:"28〜36万円",
-    about:"世界最高峰のホテルブランド「アマン」の日本旗艦店。大手町タワー上層階に位置し、東京の絶景を望む33室のスイートを有します。ゲスト一人ひとりへの究極のパーソナライズドサービスを提供する、スモールラグジュアリーの頂点。",
-    access:"東京メトロ 大手町駅 直結",
-    posts:[
-      {id:"p501",cat:"求人情報",date:"2025.04.22",title:"スパセラピスト募集：アマンクオリティの施術環境で働きませんか",body:"アマン東京のスパは、最上階から東京の絶景を望む特別な空間です。タイ古式、スウェーデン式、フェイシャルなど多様なトリートメントを提供しており、高いスキルを持つセラピストが活躍中。施設内での無料利用特典や資格取得支援など、セラピストとしての成長をフルサポートする環境を整えています。",comments:[{user:"現役セラピスト",text:"英語が全く話せないのですが、問題ありますか？",date:"4月23日"}]}
-    ],
-    jobs:[
-      {id:501,title:"ウェルネス・スパセラピスト",dept:"スパ",type:"契約社員",salary:"月給 28〜36万円",isNew:false,exp:"要資格",desc:"アマン東京スパ施設にて各種トリートメントを担当。タイ古式・スウェーデン式マッサージ、フェイシャルなど世界最高水準の施術環境。",benefits:"スパ施設無料利用、研修・資格取得支援、施設内割引",person:"セラピスト資格保持者、英語コミュニケーション可能な方歓迎"}
-    ]
-  },
-  {
-    id:6,
-    name:"ザ・リッツ・カールトン大阪",
-    logo:"RC",
-    location:"大阪・梅田",
-    area:"関西",
-    category:"外資系",
-    photo:5,
-    gallery:[5,3,2],
-    tags:["外資系","ラグジュアリー"],
-    salRange:"26〜40万円",
-    about:"大阪・梅田のランドマーク「梅田スカイビル」に隣接する、リッツ・カールトンの大阪旗艦店。「レディ＆ジェントルマン」の精神のもと、スタッフ一人ひとりがホスピタリティの担い手として活躍できる環境を提供します。",
-    access:"阪急大阪梅田駅 徒歩5分 / 大阪メトロ 梅田駅 徒歩8分",
-    posts:[
-      {id:"p601",cat:"求人情報",date:"2025.04.16",title:"ブライダル部門 秋の繁忙期に向けた採用強化中",body:"2025年の秋婚シーズンに向けて、ブライダルコーディネーターおよびバンケットスタッフの採用を強化しています。リッツ・カールトンのウェディングは国内トップクラスの顧客満足度を誇り、スタッフとして携わることで大きなやりがいを感じていただけます。経験者はもちろん、ホスピタリティ業界からの転職も大歓迎です。",comments:[]},
-      {id:"p602",cat:"職場環境",date:"2025.04.01",title:"リッツアカデミー2025年4月期がスタートしました",body:"当ホテル独自の研修プログラム「リッツアカデミー」の新期がスタートしました。ホスピタリティの基礎から、クレーム対応、英語コミュニケーション、上級者向けのリーダーシップ研修まで体系的にカリキュラムを設計。全スタッフが受講でき、費用は全額ホテル負担です。",comments:[{user:"転職検討中",text:"研修は入社後すぐに受けられますか？",date:"4月2日"},{user:"人事部",text:"入社初日からオリエンテーションが始まります！",date:"4月2日"}]}
-    ],
-    jobs:[
-      {id:601,title:"ブライダルコーディネーター",dept:"ブライダル",type:"正社員",salary:"月給 26〜40万円",isNew:true,exp:"経験者優遇",desc:"ウェディングプランナーとして、カップルの夢の結婚式実現をフルサポート。プランニングからコーディネートまで一貫して担当。",benefits:"業績賞与年2回、育児休暇完備、国内外研修制度",person:"ブライダルコーディネーター経験2年以上、おもてなしの心を持つ方"},
-      {id:602,title:"フロントスタッフ",dept:"フロント",type:"正社員",salary:"月給 24〜34万円",isNew:false,exp:"経験者優遇",desc:"チェックイン・アウト業務から、VIPゲストへのパーソナルサービスまで。リッツ流の接客を体現する最前線の役割。",benefits:"社員食堂、制服貸与、語学支援",person:"英語ビジネスレベル、接客経験2年以上"}
-    ]
-  }
-];
+const HOTELS=[];
 
 const N_CATS=["すべて","インバウンド","経営","テクノロジー","人材・採用","観光政策","グルメ・料飲"];
-const NEWS=[
-  {cat:"インバウンド",date:"2025年4月18日",title:"訪日外客2024年度過去最高を更新——ホテル稼働率も全国平均80%超え",
-   summary:"観光庁の発表によると2024年度の訪日外国人数が3,580万人を記録。特に地方のリゾートホテルで客室不足感が顕著。",
-   expert:{name:"山本 浩司",role:"ホテル経営コンサルタント",comment:"稼働率上昇は喜ばしい一方、人手不足との二重苦が深刻化しています。シーズナル需要への対応としてスポット求人活用が鍵になりそうです。"},
-   comments:[{user:"元フロントマン",text:"人手不足ひどいですよね。私のいたホテルも残業地獄でした…",date:"4月19日"}],photo:0},
-  {cat:"テクノロジー",date:"2025年4月15日",title:"AIチェックインが主要ホテルチェーンに普及——スタッフの役割はどう変わる？",
-   summary:"大手チェーンがAIを活用したセルフチェックイン・音声コンシェルジュを全国展開。パーソナルなホスピタリティの重要性も再認識。",
-   expert:{name:"鈴木 明美",role:"ホテルDXアドバイザー",comment:"AIが定型業務を担う分、人間スタッフはより深い接客・問題解決に注力できます。研修投資を惜しまない企業が優秀人材を確保しています。"},
-   comments:[],photo:1},
-  {cat:"人材・採用",date:"2025年4月12日",title:"ホテル業界の離職率が改善——給与引き上げと働き方改革が効果",
-   summary:"宿泊業の離職率が前年比2.3ポイント改善。賃上げ実施ホテルでは応募数が平均2.1倍に増加したとのデータも。",
-   expert:{name:"佐藤 健太",role:"ホテル人事コンサルタント",comment:"賃上げ効果は数字に表れていますが、給与だけが全てではありません。シフト柔軟性、寮・社宅制度、成長機会の提供をセットで訴求するホテルが差をつけています。"},
-   comments:[{user:"ホテリエ志望",text:"給与上がってきてますね！転職を考えています",date:"4月13日"},{user:"HR担当者K",text:"採用費より定着率改善の方がROI高いです",date:"4月14日"}],photo:2}
-];
-const C_CATS=[{name:"すべて",cnt:1204},{name:"キャリア相談",cnt:342},{name:"職場の悩み",cnt:518},{name:"転職情報",cnt:198},{name:"業界情報",cnt:87},{name:"勉強・資格",cnt:59}];
-let THREADS=[
-  {user:"ホテル歴8年",av:"H8",cat:"転職情報",title:"外資系から国内老舗ホテルへ転職した体験談",body:"現在外資系ホテルに勤めていますが、老舗旅館の雰囲気に憧れがあります。文化の違いや待遇の差など経験者の話を聞きたいです。",replies:23,likes:41,liked:false,time:"2時間前"},
-  {user:"新人フロント",av:"NF",cat:"職場の悩み",title:"クレーム対応が怖くて仕方ない。どう乗り越えましたか？",body:"入社3ヶ月のフロントスタッフです。先日初めて本格的なクレームに遭遇して頭が真っ白になってしまいました。みなさんの体験談を聞かせてください。",replies:47,likes:89,liked:false,time:"5時間前"},
-  {user:"料理長見習い",av:"CK",cat:"勉強・資格",title:"ホテル調理師として持っていると有利な資格は？",body:"現在調理師として2年目です。キャリアアップのために資格を取ろうと思っていますが、ホテル業界で評価される資格について教えてください。",replies:15,likes:33,liked:false,time:"1日前"},
-  {user:"GM経験者",av:"GM",cat:"業界情報",title:"2025年のホテル業界転職市場、実際どう？",body:"インバウンド増加で稼働率は上がっていますが、求職者から見た転職市場はどう感じますか？給与交渉の余地は増えましたか？",replies:62,likes:124,liked:false,time:"2日前"}
-];
+const NEWS=[];
+const C_CATS=[{name:"すべて",cnt:0},{name:"キャリア相談",cnt:0},{name:"職場の悩み",cnt:0},{name:"転職情報",cnt:0},{name:"業界情報",cnt:0},{name:"勉強・資格",cnt:0}];
+let THREADS=[];
 const PTAGS=["#フロント","#外資系","#料飲","#クレーム対応","#賃金交渉","#未経験歓迎","#旅館","#資格取得"];
 // ---- RENDER FUNCTIONS ----
 
@@ -3917,14 +3946,7 @@ function renderCal(){
   }).join("");
 }
 function selDay(el){document.querySelectorAll(".cday").forEach(d=>d.classList.remove("on"));el.classList.add("on");selectedDateIdx=parseInt(el.dataset.dayIdx||0);renderSpot();}
-const SPOT_JOBS=[
-  {id:1,title:"バンケットサービス（結婚披露宴）",hotel:"マリオット東京",time:"10:00〜19:00",wage:"¥1,800",wageNum:1800,type:"バンケット",area:"東京",photo:0,open:true,dayIdx:0,desc:"婚礼披露宴でのフードサービス・ドリンクサービス業務。当日の流れを丁寧にご説明します。服装はスーツまたは当日支給の制服。"},
-  {id:2,title:"朝食レストランスタッフ",hotel:"ANAインターコンチネンタル東京",time:"05:30〜11:00",wage:"¥1,600",wageNum:1600,type:"レストラン",area:"東京",photo:1,open:true,dayIdx:0,desc:"朝食ブッフェのセッティング・補充・接客業務。早起きが得意な方向け。終了後は自由なので午後に予定がある方にも人気。"},
-  {id:3,title:"フロントアシスタント",hotel:"京都ブライトンホテル",time:"08:00〜17:00",wage:"¥1,450",wageNum:1450,type:"フロント",area:"京都",photo:2,open:false,dayIdx:1,desc:"チェックアウト補助・荷物預かり・電話対応など。フロント経験がある方優遇。"},
-  {id:4,title:"客室清掃スタッフ",hotel:"コンラッド大阪",time:"09:00〜16:00",wage:"¥1,350",wageNum:1350,type:"清掃",area:"大阪",photo:3,open:true,dayIdx:1,desc:"客室の清掃・アメニティ補充・リネン交換など。丁寧な研修があるので初めての方も安心です。"},
-  {id:5,title:"ホテルバー バーテンダー補助",hotel:"パークハイアット東京",time:"17:00〜24:00",wage:"¥2,100",wageNum:2100,type:"バー",area:"東京",photo:4,open:true,dayIdx:2,desc:"バーカウンターでのドリンク提供・グラス管理・清掃業務。バーテンダー経験があれば尚可。夜型の方にぴったり。"},
-  {id:6,title:"レストランサービス（ランチ）",hotel:"ウェスティン都ホテル京都",time:"11:00〜16:00",wage:"¥1,500",wageNum:1500,type:"レストラン",area:"京都",photo:1,open:false,dayIdx:2,desc:"和洋レストランでのランチタイム接客。制服貸与あり。京都観光前後にサクッと働けるシフト。"}
-];
+const SPOT_JOBS=[];
 
 let spotOpenOnly=false;
 let selectedDateIdx=0;
@@ -4064,107 +4086,10 @@ const COMM_CLS  = { trouble:'c-trouble', junior:'c-junior', career:'c-career', w
 const AV_COLORS = ['#0d1f5c','#c0392b','#1a7ac0','#1a6e3c','#7a4000','#5a1a8a','#b8520a'];
 
 /* ─── Mock Data ─── */
-const COMM_MOCK = [
-  {id:1,username:'ホテル歴8年',is_anon:false,category:'career',
-   title:'外資系から国内老舗ホテルへ転職した体験談',
-   body:'現在外資系ホテルに勤めていますが、老舗旅館の雰囲気に憧れがあります。外資系はグローバルな環境と高い給与が魅力ですが、チームの一体感や日本ならではのおもてなし文化を深く学びたいという気持ちが年々強くなっています。文化の違いや待遇の差、キャリアへの影響など、実際に転職を経験された方の話を聞かせていただけると嬉しいです。特に老舗旅館での人間関係の雰囲気や、外から来た人間がどう受け入れられたかが気になっています。',
-   like_count:41,liked:false,reply_count:2,created_at:new Date(Date.now()-7200000).toISOString(),
-   comments:[
-     {username:'旅館女将見習い',body:'実際に外資から老舗旅館に転職しました。最初は文化の違いに戸惑いましたが、半年もすれば慣れます。おもてなしの深さは外資では学べないものがあります。',created_at:new Date(Date.now()-5400000).toISOString(),like_count:8,liked:false},
-     {username:'転職エージェント',body:'老舗旅館への転職は求人数が少ないので、ツテを使うか専門エージェント経由がおすすめです。待遇面は覚悟が必要ですが、やりがいは別物です。',created_at:new Date(Date.now()-3600000).toISOString(),like_count:4,liked:false}
-   ]},
-  {id:2,username:'新人フロント',is_anon:false,category:'trouble',
-   title:'クレーム対応が怖くて仕方ない。どう乗り越えましたか？',
-   body:'入社3ヶ月のフロントスタッフです。先日初めて本格的なクレームに遭遇して頭が真っ白になってしまいました。お客様は非常に感情的で、上司に引き継ぐまでの数分間、何を言っていいかまったく分からず固まってしまいました。その後も引きずってしまい、次のお客様対応も怖くて。みなさんはどうやってクレーム対応の恐怖を乗り越えましたか？研修では学んだはずなのに、いざとなると頭が真っ白になってしまいます。',
-   like_count:89,liked:false,reply_count:3,created_at:new Date(Date.now()-18000000).toISOString(),comments:[
-     {username:'先輩フロント',body:'まず深呼吸が大事！私も最初はそうでした。とにかく共感を示すことを最初の一言にすると落ち着けますよ。',created_at:new Date(Date.now()-14400000).toISOString(),like_count:5,liked:false},
-     {username:'フロントマネージャー',body:'「申し訳ございません」より先に「ご不便をおかけしました」と言うと少し柔らかくなります。感情的なお客様には論理より共感が先です。',created_at:new Date(Date.now()-12000000).toISOString(),like_count:7,liked:false},
-     {username:'匿名',body:'私も3ヶ月目でボロボロでした。半年経つと不思議と慣れてきます。今は逆にクレーム対応が得意になりました。焦らず続けてください。',created_at:new Date(Date.now()-10000000).toISOString(),like_count:3,liked:false}
-   ]},
-  {id:3,username:'料理長見習い',is_anon:false,category:'junior',
-   title:'ホテル調理師として持っていると有利な資格は？',
-   body:'現在調理師として2年目です。外資系シティホテルの厨房に勤めており、和・洋・中すべてのセクションをローテーションしています。キャリアアップのために資格取得を考えていますが、ホテル業界で特に評価される資格がどれなのか情報が少なくて迷っています。ふぐ調理師免許や野菜ソムリエ、それとも語学系の資格のほうが外資系では重宝されるのでしょうか。実際に昇格や転職で資格が効いた経験がある方のアドバイスをお聞きしたいです。',
-   like_count:33,liked:false,reply_count:2,created_at:new Date(Date.now()-86400000).toISOString(),
-   comments:[
-     {username:'シェフ歴15年',body:'外資系なら語学が最優先です。TOEIC700以上あるだけで評価が変わります。資格より実績ポートフォリオの方が転職では効きます。',created_at:new Date(Date.now()-80000000).toISOString(),like_count:6,liked:false},
-     {username:'パティシエ4年目',body:'野菜ソムリエは取得しましたが正直あまり評価されませんでした。衛生管理の資格や製菓衛生師の方が実務で使えると感じています。',created_at:new Date(Date.now()-75000000).toISOString(),like_count:4,liked:false}
-   ]},
-  {id:4,username:'GM経験者',is_anon:false,category:'career',
-   title:'2025年のホテル業界転職市場、実際どう？',
-   body:'インバウンド増加で稼働率は上がっていますが、求職者から見た転職市場はどう感じますか？私は10年以上シティホテルでマネージャーをやってきましたが、最近エージェントから急に連絡が増えてきた気がします。給与交渉の余地は実際のところ増えているのか、それとも企業は採用を増やしているだけで単価は変わらないのか。特に40代以上でGM候補・部門長候補として転職された方、実態を教えてください。',
-   like_count:124,liked:false,reply_count:3,created_at:new Date(Date.now()-172800000).toISOString(),
-   comments:[
-     {username:'外資HR担当',body:'採用は確実に活発化しています。ただし単価は職種によって差があります。GM・部門長クラスは上がっていますが、一般スタッフは微増程度です。',created_at:new Date(Date.now()-160000000).toISOString(),like_count:12,liked:false},
-     {username:'40代転職成功者',body:'昨年GM職で転職しました。前職比20%アップで交渉できました。インバウンド対応の実績と英語力をアピールしたのが効いたと思います。',created_at:new Date(Date.now()-150000000).toISOString(),like_count:9,liked:false},
-     {username:'転職検討中マネージャー',body:'参考になります。エージェントは複数使った方がいいですか？おすすめがあれば教えてほしいです。',created_at:new Date(Date.now()-140000000).toISOString(),like_count:2,liked:false}
-   ]},
-  {id:5,username:'匿名',is_anon:true,category:'trouble',
-   title:'夜勤明けの過ごし方を教えてください',
-   body:'ナイトフロントを担当して1年が経ちます。夜勤自体には慣れてきましたが、明け方の体調管理がいまだにうまくできていません。帰宅後すぐ寝ると夕方に起きてしまい、夜の睡眠が取れなくなるし、逆に起きていると夕方に強烈な眠気が来て仕事に影響します。特に連続夜勤の後の体力回復方法や、食事・運動のタイミングについて、長く夜勤をされている方のルーティンを参考にさせていただけると助かります。',
-   like_count:57,liked:false,reply_count:2,created_at:new Date(Date.now()-259200000).toISOString(),
-   comments:[
-     {username:'夜勤歴7年',body:'帰宅後は遮光カーテンを閉めて4〜5時間だけ仮眠、夕方から活動するリズムが一番安定しました。食事は帰宅後すぐ食べず、起きてから摂るようにしています。',created_at:new Date(Date.now()-250000000).toISOString(),like_count:11,liked:false},
-     {username:'ナイトフロント3年',body:'連続夜勤明けは無理せず丸1日寝ることにしています。体が資本なので、無理に生活リズムを整えようとしない方が逆に楽です。',created_at:new Date(Date.now()-245000000).toISOString(),like_count:5,liked:false}
-   ]},
-  {id:6,username:'ブライダル担当',is_anon:false,category:'life',
-   title:'ウェディング担当のオン・オフの切り替え方',
-   body:'ブライダル担当として3年目になります。お客様の大切な日に関わる仕事はやりがいも大きいのですが、当日に何かトラブルがあると帰宅後もずっと引きずってしまいます。「あの時こうすれば良かった」という後悔が止まらず、休日にも頭から離れないことがよくあります。特に挙式シーズンの繁忙期は精神的に疲弊していて、プライベートが楽しめなくなっています。同じような経験をされた方が、どうやって気持ちを切り替えているか聞かせてもらえると嬉しいです。',
-   like_count:44,liked:false,reply_count:2,created_at:new Date(Date.now()-345600000).toISOString(),
-   comments:[
-     {username:'ブライダル10年目',body:'私は帰宅後に「反省ノート」を書いて手放すようにしています。書くことで頭から出せる感じがします。シーズン中は特に意識的に休日を作ることが大事です。',created_at:new Date(Date.now()-340000000).toISOString(),like_count:8,liked:false},
-     {username:'元ブライダル現フロント',body:'トラブルは必ず起きます。完璧にやろうとするより「自分は最善を尽くした」と言い切れる準備をする方向に切り替えると少し楽になりました。',created_at:new Date(Date.now()-335000000).toISOString(),like_count:6,liked:false}
-   ]},
-  /* ── 現場の声（workplace）──  */
-  {id:10,username:'HKスタッフ4年',is_anon:false,category:'workplace',
-   chips:['ハウスキーピング','シティホテル'],
-   title:'客室清掃という仕事を、もう少しだけ知ってほしい',
-   body:'ハウスキーピングスタッフとして4年。チェックアウト後の客室を1日15〜20室、一人で仕上げる。シーツの皺ひとつ、洗面台の水滴ひとつ、ミラーの指紋ひとつ。目に入るすべてが判断の対象だ。\n\n時間は1室あたり平均28分。ゲストの滞在中にどう使われたかは部屋を見れば大体わかる。長期滞在の方が几帳面に整えているのか、それとも出張で疲弊して荷物を爆発させているのか。そういった「気配」を読みながら、次の方が気持ちよく入れる空間に整えていく。\n\nこの仕事を選んだとき、親に「もったいない」と言われた。学歴があるのに清掃の仕事か、と。でも私は一度も後悔したことがない。完璧に整えた客室をカートから振り返るあの瞬間の達成感は、デスクワークでは味わえないものだと思っている。\n\nただ正直に言えば、評価の低さには今でも悔しさを感じる。接客部門と比べて賃金の差がある。表彰される機会も少ない。「裏方だから」という空気がどこかにある。でも私たちがいなければ、ホテルは一日も回らない。\n\n先月、退職するゲストからわざわざ手紙をいただいた。「毎朝あなたが整えてくれた部屋が、私の仕事の活力でした」と。読んで、少し泣いた。表には見えない「プロ」の仕事が、確かに誰かに届いているのだと思えた瞬間だった。',
-   photo:'https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=600&q=70',
-   like_count:10,liked:false,reply_count:2,created_at:new Date(Date.now()-259200000).toISOString(),
-   comments:[
-     {username:'フロント歴10年',body:'読んで胸が熱くなりました。私はフロント側ですが、HKの皆さんがいてこそお客様に喜んでいただけると常々感じています。手紙のエピソード、素晴らしいですね。',created_at:new Date(Date.now()-240000000).toISOString(),like_count:3,liked:false},
-     {username:'HK新人1年目',body:'私も同じ仕事をしています。先輩のこの言葉、すごく励みになります。誇りを持って続けようと改めて思えました。ありがとうございます。',created_at:new Date(Date.now()-220000000).toISOString(),like_count:2,liked:false}
-   ]},
-  {id:11,username:'コンシェルジュ6年目',is_anon:false,category:'workplace',
-   chips:['コンシェルジュ','外資系ラグジュアリー'],
-   title:'コンシェルジュという仕事が、私を変えた',
-   body:'コンシェルジュになって6年。最初の1年は、ゲストの質問に答えるだけで精一杯だった。レストランの予約、タクシーの手配、観光地の案内。マニュアルを頭に叩き込んで、正確に、素早く、笑顔で。それが仕事だと思っていた。\n\nターニングポイントは入社2年目の秋だった。ある外国人ゲストが毎日のようにデスクに来ては、街の話をしていった。美術館の話、下町の市場の話、老舗の蕎麦屋の話。観光客という感じではなく、この街そのものに恋をしているようだった。\n\n最終日の朝、彼は一言だけ言って去った。「あなたがいたから、この街が好きになれた」。予約を取ったわけでも、特別なアレンジをしたわけでもない。ただ話を聞いて、自分の知っている街の「好き」を少しだけ分け与えただけだった。\n\nそれ以来、私はコンシェルジュの仕事の定義が変わった。情報を提供するのではなく、「体験の文脈」をつくること。お客様が何を求めているかより、何を感じたいのかを聞くこと。\n\n先月、後輩に「どうすれば良いコンシェルジュになれますか」と聞かれた。「街を愛すること」と答えた。案内できる場所の数よりも、自分がその街のどこに心を動かされるかを知っていることの方が、ずっと大切だと思うから。',
-   photo:'https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?w=600&q=70',
-   like_count:10,liked:false,reply_count:2,created_at:new Date(Date.now()-432000000).toISOString(),
-   comments:[
-     {username:'コンシェルジュ志望',body:'コンシェルジュを目指して就活中です。「街を愛すること」という言葉が刺さりました。観光地を暗記することばかり考えていましたが、視点が変わりました。',created_at:new Date(Date.now()-410000000).toISOString(),like_count:4,liked:false},
-     {username:'ベルスタッフ3年',body:'接客の本質って結局ここですよね。私もゲストと話す中でその感覚が少しずつ掴めてきた気がします。素敵な文章でした。',created_at:new Date(Date.now()-390000000).toISOString(),like_count:2,liked:false}
-   ]},
-  {id:12,username:'外資2年目フロント',is_anon:false,category:'workplace',
-   chips:['フロントスタッフ','外資系ラグジュアリー'],
-   title:'国内チェーンから外資系5つ星へ——転職して気づいた、本当の違い',
-   body:'国内ビジネスホテルで7年、外資系ラグジュアリーホテルに転職して2年が経った。正直に言う。想像していた「違い」と、実際の「違い」はまったく別物だった。\n\n転職前、外資系といえば「英語が飛び交う職場」「外国人ゲストが多い」「給与が高い」というイメージだった。どれも間違ってはいなかったが、一番驚いたのはそこではない。\n\n評価の透明性だ。国内ホテルでは「なんとなく頑張ればそのうち上がる」という雰囲気があった。昇給の理由は曖昧で、誰が評価しているのかも見えにくかった。外資系では違う。半期ごとに上司と1on1があり、「あなたはこの項目でこういう成果を出した、だからこれだけ評価された」と数字と言葉で説明される。\n\n最初は戸惑った。褒められる文化に慣れていた私には、「良い点と改善点を同時に言われる」フィードバックが最初は刺さった。でも慣れてくると、これほどありがたいものはないと思うようになった。次に何をすればいいかが明確だから、迷わない。\n\nサービスの哲学も違う。国内では「お客様のために」が暗黙のベースにある。外資では「ゲストのために、かつスタッフも誇れるサービスを」という視点がある。自分自身がサービスの主体者として扱われている感覚があり、それが仕事のモチベーションに直結している。\n\n転職を迷っている方に伝えたいのは、「怖くない」ということだ。違いはあるが、ホスピタリティの本質は同じだ。',
-   photo:'https://images.unsplash.com/photo-1566073771259-6a8506099945?w=600&q=70',
-   like_count:10,liked:false,reply_count:2,created_at:new Date(Date.now()-518400000).toISOString(),
-   comments:[
-     {username:'転職検討中フロント',body:'外資系への転職を考えていますが不安が大きくて。「怖くない」という言葉に少し背中を押された気がします。評価制度の話、もう少し詳しく聞いてみたいです。',created_at:new Date(Date.now()-500000000).toISOString(),like_count:5,liked:false},
-     {username:'外資フロント4年',body:'わかります。最初のフィードバック面談は緊張しましたが、慣れると本当にやりやすいですよね。国内に戻りたいとは思わなくなりました。',created_at:new Date(Date.now()-480000000).toISOString(),like_count:3,liked:false}
-   ]},
-  {id:13,username:'ナイトフロント歴5年',is_anon:false,category:'workplace',
-   chips:['フロントスタッフ','外資系ラグジュアリー'],
-   title:'フロント夜勤、5年間で見えてきたもの',
-   body:'外資系シティホテルでフロントスタッフとして働いて5年。うち夜勤専任になって3年になる。深夜2時、ロビーに人影はない。BGMだけが静かに流れている。それでも仕事は途切れない。\n\n夜勤の仕事は昼間と大きく違う。チェックインの波が落ち着いた後、一人でホテル全体を把握しなければならない。セキュリティ巡回、翌日のVIPゲスト対応の最終確認、深夜に届くルームサービスのオーダー、急な体調不良のゲストへの対応。緊急の判断を、上司に相談できない状況でくださなければならないことも多い。\n\n最初の1年は正直しんどかった。孤独感と責任の重さが同時にのしかかってくる感じがあった。ミスをしても誰もすぐにフォローしてくれない。自分で解決するか、記録に残して朝のスタッフに引き継ぐかの二択だった。\n\nでも3年が過ぎた頃から、少し見え方が変わってきた。夜のホテルには、昼間とは違う「静けさ」がある。その静けさの中に、ホテルという場所の本質が凝縮されているような気がしてきた。家でもなく、職場でもなく、旅という非日常の中に人が一時的に身を置く場所。その番人として、私はここにいる。\n\n夜勤は体力的にきついし、生活リズムも崩れやすい。でも私はこの仕事が好きだ。深夜のロビーに一人でいる時間が、今は誇りに思える。',
-   photo:'https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=600&q=70',
-   like_count:10,liked:false,reply_count:2,created_at:new Date(Date.now()-604800000).toISOString(),
-   comments:[
-     {username:'夜勤検討中',body:'夜勤への異動を打診されていて迷っています。孤独感と責任という部分が特に気になりました。でも読んでいて、なんだかやってみたくなりました。',created_at:new Date(Date.now()-580000000).toISOString(),like_count:2,liked:false},
-     {username:'ナイトフロント2年目',body:'先輩の言葉、すごく共感します。「番人」という表現がまさにそれだと思います。しんどいけど、やめられない仕事ですよね。',created_at:new Date(Date.now()-560000000).toISOString(),like_count:3,liked:false}
-   ]},
-];
+const COMM_MOCK = [];
 
 
-const NEWS_MOCK = [
-  {id:1,cat:'industry', title:'インバウンド需要回復でホテル業界の人材不足が深刻化——2026年の採用戦略を各社が模索', summary:'訪日外国人旅行者数が2025年に過去最高の3,500万人を超え、ホテル・旅館業界は空前の稼働率を記録している。その一方で、現場では深刻な人手不足が常態化しており、業界団体の調査では正社員・パートを合わせた充足率が平均82%にとどまることが明らかになった。特にフロント・コンシェルジュ・ハウスキーピングの三部門で欠員が慢性化しており、繁忙期には隣接部門からの応援配置でしのぐホテルも相次いでいる。 各社の対応策は大きく三つの方向に分かれる。第一は賃金水準の引き上げだ。大手外資系を中心に初任給を5〜10万円程度引き上げる動きが広がり、国内チェーンにも波及しつつある。第二は外国人材の積極採用で、特に東南アジア・南アジア出身の人材を対象にした採用ルートの整備が加速している。ただし在留資格の取得支援や日本語教育など、受け入れ体制のコストは決して小さくない。第三はAI・自動化による業務削減で、チェックイン機械化や清掃ロボットの導入により1人あたりの負担を下げようという試みが進む。 しかし専門家は、こうした対症療法だけでは構造的な問題は解決しないと指摘する。労働集約型のビジネスモデルそのものを見直し、サービスの再設計に踏み込む必要があるという声も高まっている。', expert:{name:'山本 浩司',role:'ホテル経営コンサルタント',comment:'人手不足は今後3〜5年でピークを迎えると予測されます。賃金引き上げだけでなく、業務の仕組みを根本から変える覚悟が企業に求められています。'}, date:'3時間前',tags:['インバウンド','人材不足'], photo:'https://images.unsplash.com/photo-1566073771259-6a8506099945?w=700&q=70', likes:24,liked:false, comments:[   {user:'元GM',text:'深刻ですね。外国人スタッフの受け入れ体制整備に一番苦労しています。',date:'2時間前',likes:3,liked:false}, ]},
-  {id:2,cat:'hiring', title:'外資系ラグジュアリーホテルの年収実態調査——GMクラスは2000万円超も', summary:'ホテル業界における給与格差の実態が、今回の調査で改めて浮き彫りになった。外資系五つ星ホテルの総支配人（GM）職では年収2,000万円を超えるケースが複数確認され、同規模の国内ホテルのGMと比較して30〜50%高い水準にあることがわかった。部門長クラス（宿泊・料飲・営業）でも年収800万〜1,200万円が相場とされており、フロントマネージャーでも500万円台後半から600万円台が珍しくない。 外資系ホテルが高い給与を維持できる背景には、グローバルな評価制度の存在がある。MBO（目標管理制度）や360度評価を導入し、成果に応じた昇給・降給が明確に運用されているため、優秀な人材が正当に報われやすい構造になっている。一方で、成果主義の裏返しとして、業績が振るわない場合の処遇見直しも厳格だ。 語学力は依然として最大のキャリア差別化要因であり、TOEICスコアよりも「業務で通じる英語力」の有無が評価の分岐点になるという。英語に加え、中国語・韓国語のいずれかを実務レベルで話せる人材は、現在の採用市場で特に引く手あまたの状況だ。転職を検討する際は、語学力の実証とともに具体的な成果指標を提示できるよう準備しておくことが重要になる。', expert:{name:'佐藤 健太',role:'ホテル人事コンサルタント',comment:'外資系の給与が高いのは事実ですが、成果主義も徹底しています。結果を出し続けるプレッシャーを覚悟した上で飛び込む必要があります。'}, date:'12時間前',tags:['年収','外資'], photo:'https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=700&q=70', likes:41,liked:false, comments:[   {user:'転職検討中',text:'外資系への転職を考えています。英語はTOEIC800程度ですが足りますか？',date:'10時間前',likes:1,liked:false},   {user:'外資GM経験者',text:'800あれば入り口は開きます。ただし実践では読む・聞く・話す・書くすべてが必要なので現場英語の準備も大切です。',date:'9時間前',likes:5,liked:false}, ]},
-  {id:3,cat:'trend', title:'「ライフスタイルホテル」急増——若手スタッフにとって新たなキャリアの選択肢に', summary:'ここ数年で急速に存在感を高めているライフスタイルホテルが、働く場としても注目を集めている。画一的なサービスより「ホテル独自の世界観」を重視するこの業態では、スタッフ一人ひとりの個性や提案が歓迎される文化があり、旧来の大型ホテルとは異なるやりがいを求める若い世代に響いている。 実際、ライフスタイルホテルで働く20〜30代スタッフへのアンケートでは、「裁量の大きさ」「ブランドへの共感」「副業・兼業の許容」が職場選びの主な理由として挙がった。フレックスタイム制や完全週休2日制を導入している施設も多く、ワークライフバランスの観点でも評価が高い。 採用面でも変化が起きており、ライフスタイルホテルの求人は「ホテル未経験者歓迎」を明記するものが増えている。接客経験よりもカルチャーフィットやコミュニケーション能力を重視する傾向があり、飲食・アパレル・観光業界からの転職者が活躍するケースも珍しくない。一方で、大手チェーンのような研修体制が整っていない施設もあるため、自己研鑽の姿勢が求められる点は留意が必要だ。業界全体のダイバーシティが広がる中、ライフスタイルホテルはホテル業界の新たな入口として機能し始めている。', expert:{name:'鈴木 明美',role:'ホテルDXアドバイザー',comment:'ライフスタイルホテルはブランドづくりへの参加意識が高く、スタッフのエンゲージメントが非常に高い傾向があります。若手にとって理想的な修行の場になり得ます。'}, date:'1日前',tags:['ライフスタイルホテル','働き方'], photo:'https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=700&q=70', likes:18,liked:false, comments:[   {user:'若手ホテリエ',text:'実際に働いてますが、裁量が大きくてやりがいあります！副業もOKなので個人プロジェクトも続けられています。',date:'20時間前',likes:4,liked:false}, ]},
-  {id:4,cat:'event', title:'HOTELWORKS CAREER FAIR 2026、5月開催——外資・国内大手30社が参加予定', summary:'ホテル業界最大規模の合同採用イベント「HOTELWORKS CAREER FAIR 2026」が、5月17日（東京・有楽町）と5月24日（大阪・梅田）の2都市で開催されることが決定した。外資系ラグジュアリーから国内老舗旅館、リゾートホテル、ライフスタイルホテルまで、幅広い業態の30社以上が参加予定で、過去最大規模の開催となる見込みだ。 今回の特徴は、採用担当者との個別面談に加え、各社の現役スタッフによるリアルトーク枠が設けられる点だ。「実際の働き方」「キャリアパス」「職場の雰囲気」について、採用担当者ではなく現場のホテリエから直接話を聞けることで、入社後のミスマッチ防止を狙う。 また、転職希望者向けの職務経歴書添削コーナーやキャリアカウンセリングブースも常設される予定で、はじめての転職活動をサポートする仕組みも整う。事前登録制で参加は無料。HOTELWORKSのサイトから申込を受け付けており、すでに登録者数が昨年の同時期比で2倍を超えているという。ホテル業界への転職・就職を検討している方にとって、業界の全体像をつかむ絶好の機会となりそうだ。', expert:{name:'田中 恵子',role:'ホスピタリティ人材研究所',comment:'今年は中途採用枠を大幅に増やしているホテルが多い。転職を検討中の方にとって絶好のタイミングです。'}, date:'2日前',tags:['イベント','採用フェア'], photo:'https://images.unsplash.com/photo-1519449556851-5720b33024e7?w=700&q=70', likes:33,liked:false,comments:[]},
-  {id:5,cat:'industry', title:'「ホテル料飲」の復権——アフタヌーンティーブームが収益を押し上げ', summary:'コロナ禍において大幅に縮小を余儀なくされたホテルの料飲部門が、2024年以降に急速な回復を見せている。中でも注目されているのがアフタヌーンティーだ。都市型シティホテルを中心に、季節をテーマにしたスイーツとセイボリーの盛り合わせを提供するアフタヌーンティーは、SNSでの拡散効果もあって予約が取りにくいコンテンツとして定着しつつある。一部のホテルでは予約受付開始から数時間で満席になるケースも報告されており、定員を増やすために会場レイアウトを見直す動きも出ている。 料飲部門の復権は、ホテル全体の収益構造にも好影響をもたらしている。客室稼働率が高止まりする中、料飲売上が全体収益の30%を超えるホテルも現れており、「宿泊に付随するサービス」から「それ自体が目的地になる体験」へと料飲の位置づけが変化してきた。 この流れを受け、パティシエ・バリスタ・ソムリエといった専門技能を持つスタッフへの需要が急増している。特に若手パティシエの採用競争は激しさを増しており、処遇改善に動くホテルも増加中だ。料飲部門をキャリアの起点として考える人材にとって、今は追い風の時代と言えるだろう。', expert:{name:'山本 浩司',role:'ホテル経営コンサルタント',comment:'料飲の復活はホテル全体のブランド価値向上につながっています。腕のいいパティシエや紅茶ソムリエの争奪戦が起きています。'}, date:'3日前',tags:['料飲','収益'], photo:'https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=700&q=70', likes:15,liked:false,comments:[]},
-];
+const NEWS_MOCK = [];
 
 /* ─── Utils ─── */
 /* ─── Utils ─── */
@@ -4931,45 +4856,12 @@ renderNews();
 let currentUser=null;
 
 /* ── モックデータ ── */
-const NOTIFS_MOCK=[
-  {id:1,read:false,type:'comment', text:'<strong>先輩フロント</strong>さんがあなたの投稿にコメントしました',time:'10分前',link:'投稿を見る',         target:{page:'community',postId:1}},
-  {id:2,read:false,type:'job',     text:'フォロー中の<strong>ザ・ペニンシュラ東京</strong>が新しい求人を掲載しました',time:'1時間前',link:'ホテルを見る', target:{page:'hotel',hotelId:1}},
-  {id:3,read:false,type:'like',    text:'あなたの投稿に<strong>12件のいいね</strong>が付きました',time:'3時間前',link:'投稿を見る',                 target:{page:'community',postId:1}},
-  {id:4,read:true, type:'article', text:'フォロー中の<strong>星のや軽井沢</strong>が記事を投稿しました：「夏季採用情報」',time:'昨日',link:'ホテルを見る', target:{page:'hotel',hotelId:2}},
-  {id:5,read:true, type:'reply',   text:'あなたのコメントに<strong>GM経験者</strong>さんが返信しました',time:'昨日',link:'記事を見る',               target:{page:'news',articleId:2}},
-  {id:6,read:true, type:'status',  text:'応募した「フロントデスクスタッフ」のステータスが<strong>書類選考中</strong>に変わりました',time:'2日前',link:'応募状況を確認', target:{page:'mypage',tab:'activity'}},
-  {id:7,read:true, type:'system',  text:'<strong>運営</strong>: HotelWorksの新機能「ホテルフォロー」がリリースされました',time:'3日前',link:'詳しく見る', target:null},
-];
-const MY_POSTS_MOCK={
-  community:[
-    {sub:'現場の声',title:'外資系から国内老舗ホテルへ転職した体験談',time:'2時間前',replies:23,likes:41, target:{page:'community',postId:1}},
-    {sub:'掲示板',title:'ホテル業界でTOEIC何点あれば有利ですか？',time:'3日前',replies:8,likes:12, target:{page:'community',postId:2}},
-  ],
-  news:[
-    {sub:'コメント',title:'「インバウンド需要回復でホテル業界の人材不足が深刻化」へのコメント',time:'昨日',replies:0,likes:2, target:{page:'news',articleId:1}},
-    {sub:'コメント',title:'「外資系ラグジュアリーホテルの年収実態調査」へのコメント',time:'4日前',replies:1,likes:0, target:{page:'news',articleId:2}},
-  ],
-  hotel:[
-    {sub:'コメント',title:'ザ・ペニンシュラ東京の語学サポート記事へのコメント',time:'2日前',replies:0,likes:0, target:{page:'hotel',hotelId:1,postId:'p101'}},
-  ],
-};
-const SAVED_JOBS_MOCK=[
-  {logo:'Pe',hotel:'ザ・ペニンシュラ東京',title:'フロントデスクスタッフ',sal:'月給 25〜38万円',type:'正社員',savedDate:'2025.04.18'},
-  {logo:'Am',hotel:'アマン東京',title:'ウェルネス・スパセラピスト',sal:'月給 28〜36万円',type:'契約社員',savedDate:'2025.04.15'},
-];
-const APPLIED_JOBS_MOCK=[
-  {logo:'RC',hotel:'ザ・リッツ・カールトン大阪',title:'ブライダルコーディネーター',sal:'月給 26〜40万円',type:'正社員',appliedDate:'2025.04.10',selectionStatus:'書類選考中'},
-  {logo:'IH',hotel:'帝国ホテル 東京',title:'フロントスタッフ',sal:'月給 24〜36万円',type:'正社員',appliedDate:'2025.03.28',selectionStatus:'一次面接調整中'},
-];
-let FOLLOWED_HOTELS=[
-  {logo:'Pe',name:'ザ・ペニンシュラ東京',latestJob:'フロントデスクスタッフ',latestArticle:'語学サポート制度について',updatedAt:'1時間前'},
-  {logo:'Ho',name:'星のや軽井沢',latestJob:'調理スタッフ',latestArticle:'夏季採用情報',updatedAt:'昨日'},
-  {logo:'IH',name:'帝国ホテル 東京',latestJob:'ブライダルコーディネーター',latestArticle:'創業135年が求める人材像',updatedAt:'2日前'},
-];
-let FOLLOWED_USERS=[
-  {av:'GM',name:'GM経験者',latest:'「2025年のホテル業界転職市場」を投稿',time:'3時間前'},
-  {av:'H8',name:'ホテル歴8年',latest:'クレーム対応の投稿にコメント',time:'昨日'},
-];
+const NOTIFS_MOCK=[];
+const MY_POSTS_MOCK={};
+const SAVED_JOBS_MOCK=[];
+const APPLIED_JOBS_MOCK=[];
+let FOLLOWED_HOTELS=[];
+let FOLLOWED_USERS=[];
 
 /* ── AUTH functions ── */
 function openAuth(tab) { tab = tab || 'login'; switchAuthTab(tab); document.getElementById('auth-modal').classList.add('open'); }
